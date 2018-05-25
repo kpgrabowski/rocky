@@ -6,8 +6,9 @@ module.exports = {
     ],
     output: {
         path: __dirname,
-        publicPath: '/',
-        filename: 'bundle.js'
+        // publicPath: '/',
+        filename: 'bundle.js',
+        publicPath: 'http://localhost:5555/',
     },
     module: {
         loaders: [{
