@@ -1,15 +1,16 @@
-import React, {Component} from 'react';
+import React from 'react';
+import Start from "./start";
 
-export class App extends Component {
+export class App extends  React.Component {
     constructor() {
         super();
     }
 
     render() {
         return (
-           <div>
-		   Welcome Rocky, here is your main container. Gl&HF!
-		   </div>
+            <div>
+            <Start/>
+            </div>
         )
     }
 }

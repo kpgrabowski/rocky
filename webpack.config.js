@@ -10,15 +10,29 @@ module.exports = {
         filename: 'bundle.js',
         publicPath: 'http://localhost:5555/',
     },
-    module: {
-        loaders: [{
-            exclude: /node_modules/,
-            loader: 'babel-loader',
-            query: {
-                presets: ['react', 'es2015', 'stage-1']
+    module: {
+        loaders: [
+            {
+                test: /.jsx?$/,
+                loader: 'babel-loader',
+                exclude: /node_modules/,
+                query: {
+                    presets: ['es2015', 'react', 'stage-2']
+                }
+            },
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader']
+            },
+            {
+                test: /\.(png|svg|jpg|gif)$/,
+                use: [
+                    'file-loader'
+                ]
             }
-        }]
+        ],
     },
+
     plugins: [
         new webpack.NamedModulesPlugin(),
         new webpack.HotModuleReplacementPlugin(),
