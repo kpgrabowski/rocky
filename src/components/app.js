@@ -1,7 +1,8 @@
 import React from 'react';
-import Start from "./start";
+import Navigation from './navigation';
+import Example from "./carousel";
 
-export class App extends  React.Component {
+export class App extends React.Component {
     constructor() {
         super();
     }
@@ -9,7 +10,12 @@ export class App extends  React.Component {
     render() {
         return (
             <div>
-            <Start/>
+                <div className="container">
+                    <Navigation/>
+                </div>
+                <div className="container">
+                    <Example/>
+                </div>
             </div>
         )
     }
