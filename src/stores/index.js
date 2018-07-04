@@ -16,7 +16,7 @@ export default {
 
         const reducers = combineReducers({ // insert reducers here
             user: userReducer
-        })
+        });
 
         if (initialState){
             store = createStore(
