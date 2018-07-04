@@ -1,21 +1,24 @@
-import ReactDOM from 'react-dom';
-import {App} from "./components/app";
-import React from 'react';
-import {Provider} from "react-redux";
-import {createStore, applyMiddleware} from "redux";
-import rootReducer from "../src/reducers/index";
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import React, { Component } from 'react'
+import ReactDOM from 'react-dom'
+import store from './stores'
+import { Provider } from 'react-redux'
+import User from "./components/containers/users";
+// import Intro from './components/Intro'
 
-// const createStoreWithMiddleware = applyMiddleware()(createStore);
+/* * * * * * * * * * * * * * * * * * * * * * * * * * *
+	This is the entry point of the React app with Redux
+	already implemented. The Intro component is the
+	visual content and most likely, you will want
+	to remove it and replace with your own visual content.
+* * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*/
 
-const store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
-ReactDOM.render(
-    <Provider store={store}>
-        <App />
-    </Provider>,
-    document.getElementById("root")
+const app = (
+    <Provider store={store.configure(null)}>
+        <User/>
+    </Provider>
 );
 
 
-
+ReactDOM.render(app, document.getElementById('root'));

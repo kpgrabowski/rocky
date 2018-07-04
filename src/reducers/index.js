@@ -1,7 +1,13 @@
-import {combineReducers} from "redux";
+/* * * * * * * * * * * * * * * * * * * * * * * * * * *
+	Export your reducers here
+* * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*/
 
-export const rootReducer = combineReducers({
-    
-});
 
-export default rootReducer;
+import userReducer from './userReducer'
+
+export {
+
+    userReducer
+
+}
