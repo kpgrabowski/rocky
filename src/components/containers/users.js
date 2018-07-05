@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import actions from '../../actions';
 
+
+
 class User extends Component {
 
     constructor() {
@@ -38,6 +40,8 @@ class User extends Component {
             password: this.state.password,
         };
         console.log('ADD_USER: ' + JSON.stringify(user));
+        this.props.createUser(user);
+
 
     }
 
@@ -56,6 +60,10 @@ class User extends Component {
                        onChange={this.onUserUpdate.bind(this, 'password')}
                 /><br/>
                 <button onClick={this.addUser.bind(this)}>Add User</button>
+
+
+
+
             </div>
         )
     }
@@ -67,8 +75,10 @@ const stateToProps = (state) => {
     }
 };
 
-const dispatchToProps = () => {
-    return
+const dispatchToProps = (dispatch) => {
+    return{
+        createUser: (user) => dispatch(actions.createUser(user)),
+    }
 
 };
 

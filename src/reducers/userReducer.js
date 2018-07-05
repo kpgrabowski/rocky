@@ -19,7 +19,10 @@ export default (state = initialState, action) => {
     switch (action.type) {
 
         case constants.USER_CREATED:
-            console.log('USER_CREATED: ' );
+            console.log('USER_CREATED: ' + JSON.stringify(action.data))
+            let all = Object.assign([], newState.all)
+            all.push(action.data)
+            newState['all'] = all
             return newState;
 
         default:

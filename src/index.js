@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
+import {Users, CurrentUsers} from './components/containers';
 import store from './stores'
-import { Provider } from 'react-redux'
-import User from "./components/containers/users";
+import {Provider} from 'react-redux'
 // import Intro from './components/Intro'
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -16,7 +16,10 @@ import User from "./components/containers/users";
 
 const app = (
     <Provider store={store.configure(null)}>
-        <User/>
+        <div>
+            <Users/>
+            <CurrentUsers/>
+        </div>
     </Provider>
 );
 

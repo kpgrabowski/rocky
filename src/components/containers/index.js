@@ -6,9 +6,10 @@
 */
 
 import Users from './users'
+import CurrentUsers from './currentUsers'
 
 export {
 
-    Users
-
+    Users,
+    CurrentUsers
 }
